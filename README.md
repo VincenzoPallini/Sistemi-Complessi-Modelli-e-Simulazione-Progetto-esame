@@ -1,3 +1,5 @@
+# Simulazione di evacuazione in casi di emergenza
+
 Questo progetto si concentra sulla simulazione e l'analisi dei processi di evacuazione in varie strutture edilizie. L'obiettivo principale è comprendere come le persone si muovono e interagiscono durante un'evacuazione, e come vari fattori, come la disposizione degli ostacoli, possono influenzare l'efficienza dell'evacuazione.
 Il progetto utilizza un modello di simulazione basato su agenti, in cui ogni agente rappresenta una persona coinvolta nell'evacuazione. Il modello utilizza una griglia bidimensionale per rappresentare la stanza, con ogni cella che può essere occupata o non occupata. Gli agenti si muovono sulla griglia in base a una serie di regole e strategie, cercando di uscire dalla stanza il più velocemente possibile 
 Una parte importante del progetto è l'analisi dell'effetto degli ostacoli sulla velocità di evacuazione. I risultati preliminari suggeriscono che la disposizione strategica degli ostacoli può avere un effetto positivo, riducendo i tempi di evacuazione del 10%. Tuttavia, un eccesso di ostacoli può avere l'effetto opposto, aumentando i tempi di evacuazione del 32,7%
