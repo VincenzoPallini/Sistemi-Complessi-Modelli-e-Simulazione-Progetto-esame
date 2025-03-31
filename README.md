@@ -8,6 +8,8 @@ This project addresses the critical problem of evacuating people from enclosed a
 
 The project is based on a **microscopic modeling** approach using two-dimensional **Cellular Automata (CA)**, following the methodology of the reference paper. Each individual (agent) is simulated individually on a discrete grid representing the environment (a rectangular room).
 
+* **Sistemi_Complessi__Modelli_e_Simulazione.pdf:** The detailed project report illustrating the methodology, simulations, results, and analysis. (**Note:** This report file is in Italian).
+
 **Methodology and Model (Based on Yuan & Tan, 2007):**
 
 * **Environment:** A rectangular room (main dimensions 20x16 meters, discretized into a 50x40 grid) with one or two exits and potential obstacles (columns).
