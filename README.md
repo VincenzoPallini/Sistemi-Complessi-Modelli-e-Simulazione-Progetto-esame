@@ -1,22 +1,48 @@
-# Evacuation simulation in emergency cases.
+### **Project: Emergency Evacuation Simulation (Implementation based on Yuan & Tan, 2007)**
 
-Il progetto di Sistemi Complessi: Modelli e Simulazione si concentra sulla simulazione di evacuazione in casi di emergenza, utilizzando come strumento principale il software NetLogo per la modellazione e la simulazione di sistemi complessi. Il progetto mira a migliorare la sicurezza delle persone attraverso la creazione di un ambiente di simulazione che comprenda agenti (persone), diverse uscite e la presenza di ostacoli, valutando e analizzando l'evacuazione delle persone in diverse configurazioni ambientali.
+**(Course: Complex Systems: Models and Simulation - Master's Degree in Computer Science, A.Y. 2022-2023)**
 
-## Tecnologie Utilizzate
+**General Description:**
 
-- **NetLogo**: Software di modellazione e simulazione utilizzato per implementare il modello di evacuazione. NetLogo offre una piattaforma flessibile per simulare sistemi complessi e interazioni tra agenti.
+This project addresses the critical problem of evacuating people from enclosed areas during emergency situations. The main objective was to **implement, simulate, and extend the Cellular Automata-based evacuation model proposed in the paper "An evacuation model using cellular automata" by Weifeng Yuan and Kang Hai Tan (Physica A, 2007)**. Through simulation, crowd movement dynamics were analyzed to identify environmental configurations (exit locations, presence and placement of obstacles) that optimize evacuation time and efficiency, thereby enhancing safety.
 
-## Progetto
+The project is based on a **microscopic modeling** approach using two-dimensional **Cellular Automata (CA)**, following the methodology of the reference paper. Each individual (agent) is simulated individually on a discrete grid representing the environment (a rectangular room).
 
-1. **Definizione degli Obiettivi**: Il progetto mira a valutare l'efficacia delle procedure di evacuazione in ambienti diversi, considerando la posizione e le dimensioni delle uscite e degli ostacoli.
+**Methodology and Model (Based on Yuan & Tan, 2007):**
 
-2. **Stato dell'Arte e Approcci di Simulazione**: Analisi degli approcci esistenti per la simulazione di pedoni e evacuazioni di emergenza, inclusi modelli macroscopici, microscopici, automi cellulari, e modelli basati su agenti.
+* **Environment:** A rectangular room (main dimensions 20x16 meters, discretized into a 50x40 grid) with one or two exits and potential obstacles (columns).
+* **Agents (Pedestrians):** Each agent occupies one cell and moves within its Moore neighborhood. Movement is **probabilistic**, as defined in the original model.
+* **Movement Decision:** Agents choose which exit to head towards by calculating a probability (`P_i`) for each exit. This probability considers:
+    * The Euclidean **distance** from the agent to the exit (`P_i-r`).
+    * The **occupancy density** (number of people) in the area near the exit (`P_i-d`).
+* **Behavioral Extensions:** Beyond the base model, behavioral factors were incorporated to increase realism:
+    * **"Unadventurous effect":** Tendency to prefer a known exit.
+    * **"Inertial effect":** Tendency not to change direction once an exit is chosen.
+    * **"Field of view":** Basic ability to perceive and bypass static obstacles.
+* **Tested Scenarios:** Systematic simulations were conducted (10 runs per scenario with 250 agents), varying:
+    * **Number of Exits:** 1 (Base Model) and 2 (Extended Model).
+    * **Exit Positions:** Central vs. Corner/Near-corner.
+    * **Presence of Obstacles:** Absent vs. Present (based on additional studies).
 
-3. **Sviluppo del Modello**: Creazione di un modello basato su automi cellulari bidimensionali in NetLogo, con regole specifiche per il movimento dei pedoni, la selezione delle uscite e l'evitamento degli ostacoli. Il modello considera vari fattori come la distanza dalle uscite, la densità di occupazione e il comportamento umano in situazioni di emergenza.
+**Technologies Used:**
 
-4. **Simulazione e Validazione**: Esecuzione di simulazioni in NetLogo per testare il modello in scenari diversi, con una o più uscite e con o senza ostacoli. Analisi dei risultati per valutare l'efficacia delle configurazioni ambientali nell'ottimizzare i tempi di evacuazione.
+* **Simulation Platform:** **NetLogo** (widely used for simulating complex systems and agent-based modeling).
+* **Modeling Paradigm:** **Agent-Based Modeling (ABM)**, specifically implemented via **Cellular Automata (CA)**.
+* **Analysis:** Calculation of metrics such as Total Evacuation Time (TET) and flow visualization using **Heatmaps**.
 
-5. **Analisi dei Risultati**: Utilizzo di heatmap per visualizzare la densità, la direzione e il flusso della folla durante l'evacuazione, e per identificare le configurazioni ottimali degli ambienti affollati.
+**Obtained Results:**
 
-6. **Conclusioni e Sviluppi Futuri**: Valutazione delle simulazioni per proporre soluzioni ottimali per la progettazione di ambienti affollati, garantendo un'evacuazione efficace. Identificazione di aree per ulteriori ricerche e miglioramenti del modello.
+The simulations allowed for the validation of the model implementation and the analysis of the environmental configuration's impact on evacuation efficiency:
 
+1.  **Exit Positions:**
+    * In the absence of obstacles, **centrally** located exits tend to yield shorter evacuation times.
+    * In the presence of obstacles, exits located **near corners** proved more efficient.
+2.  **Impact of Obstacles:**
+    * Obstacles placed in front of central exits **increased** evacuation times.
+    * Strategically placed obstacles near **corner exits** **reduced** evacuation times, mitigating the bottleneck effect.
+    * The **distance** of the obstacle from the exit was found to be critical.
+3.  **Visualization:** The generated heatmaps clearly visualized flows, congestion points, and the effect of obstacles in directing agent movement.
+4.  **Emergent Phenomena:** The model reproduced collective behaviors such as queue formation and, in the extended model, agents changing their target exit based on perceived crowding, affecting overall times.
+
+
+---
