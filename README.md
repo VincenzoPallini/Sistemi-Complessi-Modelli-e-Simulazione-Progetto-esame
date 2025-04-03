@@ -10,7 +10,7 @@ The project is based on a **microscopic modeling** approach using two-dimensiona
 
 * **Sistemi_Complessi__Modelli_e_Simulazione.pdf:** The detailed project report illustrating the methodology, simulations, results, and analysis. (**Note:** This report file is in Italian).
 
-**Methodology and Model (Based on Yuan & Tan, 2007):**
+**Methodology and Model:**
 
 * **Environment:** A rectangular room (main dimensions 20x16 meters, discretized into a 50x40 grid) with one or two exits and potential obstacles (columns).
 * **Agents (Pedestrians):** Each agent occupies one cell and moves within its Moore neighborhood. Movement is **probabilistic**, as defined in the original model.
@@ -45,6 +45,3 @@ The simulations allowed for the validation of the model implementation and the a
     * The **distance** of the obstacle from the exit was found to be critical.
 3.  **Visualization:** The generated heatmaps clearly visualized flows, congestion points, and the effect of obstacles in directing agent movement.
 4.  **Emergent Phenomena:** The model reproduced collective behaviors such as queue formation and, in the extended model, agents changing their target exit based on perceived crowding, affecting overall times.
-
-
----
